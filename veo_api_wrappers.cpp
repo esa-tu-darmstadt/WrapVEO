@@ -167,6 +167,23 @@ void wrapper_veo_args_set_i8 (veo_args* ca, int argnum, int8_t val) {
   }
 }
 
+void wrapper_veo_args_set_u8 (veo_args* ca, int argnum, uint8_t val) {
+  int status = veo_args_set_u8 (ca, argnum, val);
+  if (status == 0) {
+    #ifdef PRINT_ALL_VEO_API
+    std::cout << "\tveo_args_set_u8():\tsuccess." << std::endl;
+    #endif
+  }
+  else if (status < 0) {
+    std::cout << "\tveo_args_set_u8():\tfailure: " << xstr(PRINT_FILE_LINE) << std::endl;
+    std::exit (EXIT_FAILURE);
+  }
+  else {
+    std::cout << "\tveo_args_set_u8():\tnot expected!: " << xstr(PRINT_FILE_LINE) << std::endl;
+    std::exit (EXIT_FAILURE);
+  }
+}
+
 void wrapper_veo_args_set_i32 (veo_args* ca, int argnum, int32_t val) {
   int status = veo_args_set_i32 (ca, argnum, val);
   if (status == 0) {
