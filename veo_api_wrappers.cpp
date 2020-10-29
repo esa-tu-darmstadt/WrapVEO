@@ -184,6 +184,40 @@ void wrapper_veo_args_set_u8 (veo_args* ca, int argnum, uint8_t val) {
   }
 }
 
+void wrapper_veo_args_set_i16 (veo_args* ca, int argnum, int16_t val) {
+  int status = veo_args_set_i16 (ca, argnum, val);
+  if (status == 0) {
+    #ifdef PRINT_ALL_VEO_API
+    std::cout << "\tveo_args_set_i16():\tsuccess." << std::endl;
+    #endif
+  }
+  else if (status < 0) {
+    std::cout << "\tveo_args_set_i16():\tfailure: " << xstr(PRINT_FILE_LINE) << std::endl;
+    std::exit (EXIT_FAILURE);
+  }
+  else {
+    std::cout << "\tveo_args_set_i16():\tnot expected!: " << xstr(PRINT_FILE_LINE) << std::endl;
+    std::exit (EXIT_FAILURE);
+  }
+}
+
+void wrapper_veo_args_set_u16 (veo_args* ca, int argnum, uint16_t val) {
+  int status = veo_args_set_u16 (ca, argnum, val);
+  if (status == 0) {
+    #ifdef PRINT_ALL_VEO_API
+    std::cout << "\tveo_args_set_u16():\tsuccess." << std::endl;
+    #endif
+  }
+  else if (status < 0) {
+    std::cout << "\tveo_args_set_u16():\tfailure: " << xstr(PRINT_FILE_LINE) << std::endl;
+    std::exit (EXIT_FAILURE);
+  }
+  else {
+    std::cout << "\tveo_args_set_u16():\tnot expected!: " << xstr(PRINT_FILE_LINE) << std::endl;
+    std::exit (EXIT_FAILURE);
+  }
+}
+
 void wrapper_veo_args_set_i32 (veo_args* ca, int argnum, int32_t val) {
   int status = veo_args_set_i32 (ca, argnum, val);
   if (status == 0) {

@@ -24,6 +24,8 @@ void wrapper_veo_free_mem (veo_proc_handle* h, uint64_t addr);
 veo_args* wrapper_veo_args_alloc (void);
 void wrapper_veo_args_set_i8 (veo_args* ca, int argnum, int8_t val);
 void wrapper_veo_args_set_u8 (veo_args* ca, int argnum, uint8_t val);
+void wrapper_veo_args_set_i16 (veo_args* ca, int argnum, int16_t val);
+void wrapper_veo_args_set_u16 (veo_args* ca, int argnum, uint16_t val);
 void wrapper_veo_args_set_i32 (veo_args* ca, int argnum, int32_t val);
 void wrapper_veo_args_set_u32 (veo_args* ca, int argnum, uint32_t val);
 void wrapper_veo_args_set_u64 (veo_args* ca, int argnum, uint64_t val);
