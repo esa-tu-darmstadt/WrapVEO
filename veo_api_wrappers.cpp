@@ -338,6 +338,7 @@ uint64_t wrapper_veo_call_async_by_name (veo_thr_ctxt* ctx, uint64_t libhdl, con
     std::cout << "\tveo_call_async_by_name():\trequest failed: " << xstr(PRINT_FILE_LINE) << std::endl;
     std::exit (EXIT_FAILURE);
 	}
+  return requested_id;
 }
 
 void wrapper_veo_call_wait_result (veo_thr_ctxt* ctx, uint64_t reqid, uint64_t* retp) {
